@@ -57,6 +57,6 @@ export const Navbar = () => {
             </Button>
 
         </Toolbar>
-    </AppBar>
+    </AppBar> /* app bar*/
   )
 }
