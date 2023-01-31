@@ -1,0 +1,8 @@
+services:
+  apudb:
+    image: mongo:6.0.4
+    container_name: apu-database
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/db
