@@ -15,8 +15,8 @@ export const ProductCard: FC<Props> = ({ product }) => {
 
     const productImage = useMemo(() => {
         return isHovered
-          ? `products/${ product.images[1] }`
-          : `products/${ product.images[0] }`;
+          ? `/products/${ product.images[1] }`
+          : `/products/${ product.images[0] }`;
 
     }, [isHovered, product.images])
 
@@ -28,7 +28,7 @@ export const ProductCard: FC<Props> = ({ product }) => {
             onMouseLeave={ () => setIsHovered(false) } 
       >
           <Card>
-              <NextLink href="/product/slug" passHref prefetch={ false }>
+              <NextLink href={`/product/${product.slug}`} passHref prefetch={ false }>
                 {/* <Link> */}
                     <CardActionArea>
                         <CardMedia 
