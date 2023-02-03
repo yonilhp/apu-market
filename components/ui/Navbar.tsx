@@ -27,8 +27,8 @@ export const Navbar = () => {
             <Toolbar>
                 <NextLink href='/' style={{display:'flex', alignItems:'center'}} passHref>
                     {/* <Link > */}
-                        <Typography variant='h6'>Teslo |</Typography>
-                        <Typography sx={{ ml: 0.5 }}>Shop</Typography>
+                        <Typography variant='h6'>Apu |</Typography>
+                        <Typography sx={{ ml: 0.5 }}>Matket</Typography>
                     {/* </Link>   */}
                 </NextLink>
 
