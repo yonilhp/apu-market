@@ -1,7 +1,6 @@
 import Product from '@/models/Product';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { db } from '../../../database';
-//import { Product } from '../../../models';
 import { IProduct } from '../../../interfaces';
 
 type Data = 

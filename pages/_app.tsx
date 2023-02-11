@@ -1,4 +1,4 @@
-import { CartProvider, UiProvider } from '@/context';
+import { AuthProvider, CartProvider, UiProvider } from '@/context';
 import '@/styles/globals.css'
 import { lightTheme } from '@/themes';
 import { ThemeProvider } from '@emotion/react';
@@ -13,14 +13,16 @@ import { SWRConfig } from 'swr';
         fetcher: (resource, init) => fetch(resource, init).then(res => res.json())
       }}
     >
-      <CartProvider>
-        <UiProvider>
-          <ThemeProvider theme={ lightTheme}>
-              <CssBaseline />
-              <Component {...pageProps} />
-          </ThemeProvider>
-        </UiProvider>
-      </CartProvider>
+      <AuthProvider>
+        <CartProvider>
+          <UiProvider>
+            <ThemeProvider theme={ lightTheme}>
+                <CssBaseline />
+                <Component {...pageProps} />
+            </ThemeProvider>
+          </UiProvider>
+        </CartProvider>
+      </AuthProvider>
       
     </SWRConfig>
   )

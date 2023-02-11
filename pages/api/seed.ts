@@ -1,6 +1,7 @@
 //import { db, seeDatabase } from '@/database';
 //import Product from '@/models/Product';
-import Product from '@/models/Product';
+import { User, Product } from '@/models';
+// import Product from '@/models/Product';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { db, seeDatabase } from '../../database';
 //import { Product } from '../../models';
@@ -14,8 +15,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     }
 
     await db.connect();
+    await User.deleteMany();
+    await User.insertMany( seeDatabase.initialData.users );
     await Product.deleteMany();
     await Product.insertMany( seeDatabase.initialData.products );
+    
     await db.disconnect();
 
 
